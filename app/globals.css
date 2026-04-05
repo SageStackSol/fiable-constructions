@@ -1,5 +1,13 @@
 @import "tailwindcss";
 
+@layer components{
+  .ul-animation{
+    @apply relative;
+  }
+  .ul-animation::after{
+    @apply absolute content-[''] w-full h-2 left-0 bottom-[-4px] bg-red-950 scale-x-0 hover:scale-x-100 origin-bottom-right hover:origin-bottom-left transition-transform duration-300
+  }
+}
 :root {
   --background: #ffffff;
   --foreground: #171717;
