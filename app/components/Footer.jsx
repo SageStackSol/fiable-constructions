@@ -1,7 +1,12 @@
+"use client"
 import React from "react";
 import Link from "next/link";
+import { usePathname } from 'next/navigation';
+
 
 function Footer() {
+  const pathname = usePathname();
+
   return (
     <>
       <div className="grid grid-cols-3 gap-6 bg-[#002f67] lg:h-72 md:h-72 lg:px-[4em] md:px-[4em] px-[1em] py-[2em] items-center text-white">
