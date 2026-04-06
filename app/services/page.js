@@ -1,6 +1,13 @@
+"use client"
 import React from "react";
+import { useRouter } from "next/navigation";
 
 function Page() {
+   const router = useRouter();
+
+  const handleRedirect = (service) => {
+    router.push(`/contact?service=${encodeURIComponent(service)}`);
+  };
   return (
     <>
       <div className='bg-[url("/services-hero.png")] bg-cover h-screen flex flex-col justify-center items-center'>
@@ -25,8 +32,12 @@ function Page() {
           />
         </div>
         <div className="text-[#002f67] lg:col-span-2 md:col-span-2 col-span-3 lg:px-12 md:px-12 flex flex-col justify-center">
-          <p className="font-semibold tracking-widest lg:my-0 md:my-0 my-4">DIVISION 01</p>
-          <h3 className="font-black text-4xl lg:my-4 md:my-4">Architectural Design</h3>
+          <p className="font-semibold tracking-widest lg:my-0 md:my-0 my-4">
+            DIVISION 01
+          </p>
+          <h3 className="font-black text-4xl lg:my-4 md:my-4">
+            Architectural Design
+          </h3>
           <p className=" lg:leading-loose md:leading-loose">
             We create innovative and practical designs that combine
             functionality, aesthetics, and structural safety. Design spaces that
@@ -65,7 +76,7 @@ function Page() {
               <p>Building approval drawings</p>
             </div>
           </div>
-          <button className="bg-[#ffc800] lg:w-[40%] md:w-[40%] text-[#002f67] font-semibold tracking-wider shadow-lg py-3 px-6  hover:rounded">
+          <button onClick={() => handleRedirect("Architectural Design")} className="bg-[#ffc800] hover:cursor-pointer  lg:w-[40%] md:w-[40%] text-[#002f67] font-semibold tracking-wider shadow-lg py-3 px-6  hover:rounded">
             START YOUR DESIGN
           </button>
         </div>
@@ -105,7 +116,7 @@ function Page() {
               </p>
             </div>
           </div>
-          <button className="bg-[#ffc800] lg:w-[40%] md:w-[40%] text-[#002f67] font-semibold tracking-wider shadow-lg py-3 px-6  hover:rounded">
+          <button onClick={() => handleRedirect("Construction Consultation")} className="bg-[#ffc800] hover:cursor-pointer lg:w-[40%] md:w-[40%] text-[#002f67] font-semibold tracking-wider shadow-lg py-3 px-6  hover:rounded">
             BOOK A CONSULTATION{" "}
           </button>
         </div>
@@ -125,17 +136,27 @@ function Page() {
 
       <div>
         <div className="text-[#002f67]  lg:px-12 md:px-12 p-4 flex flex-col justify-center bg-[#f7f7f7] py-20">
-          <p className="font-semibold tracking-widest text-center">DIVISION 03</p>
-          <h3 className="font-black text-4xl my-4 text-center ">Construction Execution</h3>
+          <p className="font-semibold tracking-widest text-center">
+            DIVISION 03
+          </p>
+          <h3 className="font-black text-4xl my-4 text-center ">
+            Construction Execution
+          </h3>
           <p className="lg:leading-loose md:leading-loose lg:px-40 md:px-40 text-center">
             We provide end-to-end construction exectution, managing the entire
             process from foundation to finishing with a focus on timely delivery
             and quality workmanship.
           </p>
           <div className="grid grid-cols-3 gap-4 my-12">
-            <div className="bg-white lg:p-12 md:p-12 p-4 lg:col-span-1 md:col-span-1 col-span-3 border-b-4 border-[#ffc800]">
+            <div
+              className="bg-white lg:p-12 md:p-12 p-4 lg:col-span-1 md:col-span-1 col-span-3 border-b-4 border-[#ffc800] transition-all duration-300 ease-out
+transform hover:-translate-y-2 hover:scale-102
+hover:shadow-2xl"
+            >
               <img className="w-12 h-12" src="/property.png" />
-              <h6 className="font-bold text-2xl my-4">Residential and Commercial</h6>
+              <h6 className="font-bold text-2xl my-4">
+                Residential and Commercial
+              </h6>
               <p className="text-[#002c67]/68 mb-4">
                 Full-scale building construction for homes and corporate spaces
                 with turnkey management.
@@ -146,11 +167,16 @@ function Page() {
                 <li>REMODELING</li>
               </ul>
             </div>
-            <div className="bg-white lg:p-12 md:p-12 p-4 lg:col-span-1 md:col-span-1 col-span-3 border-b-4 border-[#ffc800] mt-8 h-full">
+            <div
+              className="bg-white lg:p-12 md:p-12 p-4 lg:col-span-1 md:col-span-1 col-span-3 border-b-4 border-[#ffc800] transition-all duration-300 ease-out
+transform hover:-translate-y-2 hover:scale-102
+hover:shadow-2xl "
+            >
               <img className="w-12 h-12" src="/engineer.png" />
               <h6 className="font-bold text-2xl my-4">Quality & Supervision</h6>
               <p className="text-[#002c67]/68 mb-4">
-               Regorous quality control and on-site supervision to ensure structural integrity and safety.
+                Regorous quality control and on-site supervision to ensure
+                structural integrity and safety.
               </p>
               <ul className="list-disc text-[#002c67]/68 font-medium">
                 <li>LABOUR COORDINATION</li>
@@ -158,11 +184,17 @@ function Page() {
                 <li>QUALITY AUDITS</li>
               </ul>
             </div>
-            <div className="bg-white lg:p-12 md:p-12 p-4 lg:col-span-1 md:col-span-1 col-span-3 border-b-4 border-[#ffc800]">
+            <div
+              className="bg-white lg:p-12 md:p-12 p-4 lg:col-span-1 md:col-span-1 col-span-3 border-b-4 border-[#ffc800] transition-all duration-300 ease-out
+transform hover:-translate-y-2 hover:scale-102
+hover:shadow-2xl"
+            >
               <img className="w-12 h-12" src="/tools.png" />
               <h6 className="font-bold text-2xl my-4">Project Management</h6>
               <p className="text-[#002c67]/68 mb-4">
-End-to-end oversight ensuring cost efficiency and adhering to strict project timelines.              </p>
+                End-to-end oversight ensuring cost efficiency and adhering to
+                strict project timelines.{" "}
+              </p>
               <ul className="list-disc text-[#002c67]/68 font-medium">
                 <li>TIMELY DELIVERY</li>
                 <li>BUDGET CONTROL</li>
@@ -171,11 +203,10 @@ End-to-end oversight ensuring cost efficiency and adhering to strict project tim
             </div>
           </div>
           <div className="flex justify-center mt-8">
- <button className="bg-[#ffc800] lg:w-[40%] md:w-[40%] text-[#002f67] font-semibold tracking-wider shadow-lg py-3 px-6  hover:rounded">
-START YOUR PROJECT
-          </button>
+            <button onClick={() => handleRedirect("Construction Execution")} className="bg-[#ffc800] hover:cursor-pointer lg:w-[40%] md:w-[40%] text-[#002f67] font-semibold tracking-wider shadow-lg py-3 px-6  hover:rounded">
+              START YOUR PROJECT
+            </button>
           </div>
-         
         </div>
       </div>
     </>

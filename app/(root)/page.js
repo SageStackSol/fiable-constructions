@@ -8,7 +8,7 @@ export default function Hero() {
     <>
       <div className="flex flex-col gap-28 ">
         {/* hero */}
-        <div className="relative h-screen w-full px-16 py-20 overflow-hidden bg-[#002F67] lg:grid md:grid hidden grid-cols-5 items-center justify-center">
+        {/* <div className="relative h-screen w-full px-16 py-20 overflow-hidden bg-[#002F67] lg:grid md:grid hidden grid-cols-5 items-center justify-center">
           <div className="col-span-3 ">
             <motion.div
               initial={{
@@ -63,8 +63,11 @@ export default function Hero() {
               }}
               className="relative z-10 "
             >
-              <img className="h-[76vh] relative " src="home-hero-2.jpg" />
-              <div className="bg-white w-fit px-8 py-4 text-center text-black/60 absolute right-0 bottom-10">
+              <img
+                className="h-[76vh] relative transition duration-700 hover:scale-105"
+                src="home-hero-2.jpg"
+              />
+              <div className="bg-white shadow-xl transition hover:scale-105 w-fit px-8 py-4 text-center text-black/60 absolute right-0 bottom-10">
                 <p>
                   <span className="text-[#002F67] font-black text-5xl">8+</span>
                   <br />
@@ -73,7 +76,7 @@ export default function Hero() {
               </div>
             </motion.div>
           </div>
-        </div>
+        </div> */}
         {/* hero mobile */}
         <div className="relative p-4 w-full overflow-hidden bg-[#002F67] lg:hidden md:hidden grid grid-cols-5 items-center justify-center">
           <div className="lg:col-span-2 md:col-span-2 col-span-5 pt-24">
@@ -197,8 +200,8 @@ export default function Hero() {
               }}
               className="relative z-10 "
             >
-              <img className="h-[76vh] relative " src="home-hero-2.jpg" />
-              <div className="bg-[#002F67] w-fit px-8 py-4 text-center text-white absolute right-0 bottom-10">
+              <img className="h-[76vh] relative transition duration-700 hover:scale-105" src="home-hero-2.jpg" />
+              <div className="bg-[#002F67] w-fit shadow-xl transition hover:scale-105 px-8 py-4 text-center text-white absolute right-0 bottom-10">
                 <p>
                   <span className="text-white font-black text-5xl">8+</span>
                   <br />
@@ -275,59 +278,7 @@ export default function Hero() {
             </motion.div>
           </div>
         </div>
-        {/* about us */}
-        <div className=" lg:px-16 md:px-12 px-4">
-          <div className="flex items-center gap-4">
-            <h2 className="lg:text-5xl md:text-5xl text-2xl font-black text-nowrap">
-              <span className="text-[#FFC800]">ABOUT US </span>
-            </h2>
-            <div className="h-1 w-full bg-linear-to-r from-[#FFC800] to-[#E6E6E6]"></div>
-          </div>
-          <div className="grid grid-cols-5 gap-6 my-12">
-            <img
-              className="lg:col-span-2 md:col-span-2 col-span-5 shadow-2xl shadow-gray-600 rounded-2xl h-full"
-              src="/home-about-us.png"
-            />
-            <div className="lg:col-span-3 md:col-span-3 col-span-5">
-              <p>
-                {/* We are a professional construction freelancing service
-                specializing in architectural design, structural planning,
-                project consultation, and complete construction execution. Our
-                mission is to transform ideas into well-designed, durable, and
-                cost-efficient structures that meet modern standards.
-                <br />
-                From concept planning to final construction, we provide reliable
-                guidance and professional solutions for residential, commercial,
-                and renovation projects. */}
-                Since our inception, we have remained committed to delivering
-                excellence in architectural design, structural planning, and
-                construction services. <br />
-                We don’t just build; we transform ideas into durable,
-                cost-efficient, and modern structures. Our approach combines
-                technical expertise with innovative design to ensure every
-                project meets the highest standards of quality and
-                functionality.
-                <br />
-                <br /> From concept planning to final execution, we provide
-                reliable guidance and professional solutions for residential,
-                commercial, and renovation projects.
-              </p>
-              {/* <br /> */}
-              <button className="mt-2 bg-[#FFC800] text-black mr-2 px-6 py-2 rounded-md ">
-                100+ Projects Delivered
-              </button>
-              <button className="mt-2 bg-[#FFC800]  text-black mr-2 px-6 py-2 rounded-md ">
-                90+ Trusted Partnerships
-              </button>
-              <button className="mt-2 bg-[#FFC800] text-black mr-2 px-6 py-2 rounded-md ">
-                350 +Designs & Plans Executed
-              </button>
-              <button className="mt-2 bg-[#FFC800] text-black mr-2 px-6 py-2 rounded-md ">
-                8+ Years of Structural Excellence
-              </button>
-            </div>
-          </div>
-        </div>
+
         {/* about us */}
 
         <div className=" lg:px-16 md:px-12 px-4">
@@ -367,36 +318,18 @@ export default function Hero() {
                 and renovation projects.
               </p>
               {/* <br /> */}
-              <div className="border-y-4 border-[#FFC800] py-2 lg:flex md:flex block lg:gap-0 md:gap-0 gap-2 justify-between mt-4">
-                <p className="text-center text-sm">
-                  <span className="text-[#002F67] font-black lg:text-5xl md:text-5xl text-2xl">
-                    8+
-                  </span>
-                  <br />
-                  YEARS EXCELLENCE
-                </p>
-                <p className="text-center text-sm">
-                  <span className="text-[#002F67] font-black lg:text-5xl md:text-5xl text-2xl">
-                    100+
-                  </span>
-                  <br />
-                  PROJECTS DELIVERED
-                </p>
-                <p className="text-center text-sm">
-                  <span className="text-[#002F67] font-black lg:text-5xl md:text-5xl text-2xl">
-                    90+
-                  </span>
-                  <br />
-                  TRUSTED PARTNERSHIPS
-                </p>
-                <p className="text-center text-sm">
-                  <span className="text-[#002F67] font-black lg:text-5xl md:text-5xl text-2xl">
-                    350+
-                  </span>
-                  <br />
-                  DESIGNS & PLANS EXECUTED
-                </p>
-              </div>
+              <button className="mt-2 bg-[#FFC800] text-black mr-2 px-6 py-2 rounded-md ">
+                100+ Projects Delivered
+              </button>
+              <button className="mt-2 bg-[#FFC800]  text-black mr-2 px-6 py-2 rounded-md ">
+                90+ Trusted Partnerships
+              </button>
+              <button className="mt-2 bg-[#FFC800] text-black mr-2 px-6 py-2 rounded-md ">
+                350 +Designs & Plans Executed
+              </button>
+              <button className="mt-2 bg-[#FFC800] text-black mr-2 px-6 py-2 rounded-md ">
+                8+ Years of Structural Excellence
+              </button>
             </div>
           </div>
         </div>
@@ -502,101 +435,17 @@ export default function Hero() {
           </div>
         </div>
         {/* our projects */}
-        <div className=" lg:px-16 md:px-12 px-4">
-          <p className="text-black/60 font-medium">FEATURED WORKS</p>
-          <div className="flex items-center gap-4 my-4">
-            <h2 className="lg:text-5xl md:text-5xl text-2xl text-[#FFC800] font-black text-nowrap">
-              <span className=" ">OUR PROJECTS</span>
-            </h2>
-            {/* <hr className=" bg-linear-to-r from-yellow-400 to-black"/> */}
-            <div className="h-1 w-full bg-linear-to-r from-[#FFC800] to-[#E6E6E6]"></div>
-          </div>
-          <h2 className="text-lg lg:w-[44vw] md:w-[44vw] sm:w-full mt-2 font-semibold">
-            Here are some projects that define our commitment to{" "}
-            <span className="text-[#FFC800] underline"> precision</span> and
-            <span className="text-[#FFC800] underline"> quality</span> .
-          </h2>
-          <div className="my-12 grid grid-cols-3 gap-2">
-            <div className="group relative overflow-hidden  w-full h-56 cursor-pointer lg:col-span-2 md:col-span-2 col-span-3">
-              <img
-                src="/home-hero-1.jpg"
-                className="w-full h-full object-cover transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-110"
-              />
 
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-black/30 transition-opacity duration-700 group-hover:opacity-0"></div>
-
-              <div className="absolute bottom-6 left-6 text-white transition-all duration-700 group-hover:opacity-0 group-hover:translate-y-4">
-                <h2 className="text-2xl font-light leading-tight">
-                  <span className="text-xs font-semibold text-[#FFC800]">
-                    {" "}
-                    Home
-                  </span>{" "}
-                  <br /> Design
-                </h2>
-              </div>
-            </div>
-            <div className="group relative overflow-hidden  w-full h-56 cursor-pointer lg:col-span-1 md:col-span-1 col-span-3 ">
-              <img
-                src="/home-hero-1.jpg"
-                className="w-full h-full object-cover transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-110"
-              />
-
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-black/30 transition-opacity duration-700 group-hover:opacity-0"></div>
-
-              <div className="absolute bottom-6 left-6 text-white transition-all duration-700 group-hover:opacity-0 group-hover:translate-y-4">
-                <h2 className="text-2xl font-light leading-tight">
-                  <span className="text-xs font-semibold text-[#FFC800]">
-                    {" "}
-                    Home
-                  </span>{" "}
-                  <br /> Design
-                </h2>
-              </div>
-            </div>
-            <div className="group relative overflow-hidden  w-full h-56 cursor-pointer lg:col-span-1 md:col-span-1 col-span-3 ">
-              <img
-                src="/home-hero-1.jpg"
-                className="w-full h-full object-cover transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-110"
-              />
-
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-black/30 transition-opacity duration-700 group-hover:opacity-0"></div>
-
-              <div className="absolute bottom-6 left-6 text-white transition-all duration-700 group-hover:opacity-0 group-hover:translate-y-4">
-                <h2 className="text-2xl font-light leading-tight">
-                  <span className="text-xs font-semibold text-[#FFC800]">
-                    {" "}
-                    Home
-                  </span>{" "}
-                  <br /> Design
-                </h2>
-              </div>
-            </div>
-            <div className="group relative overflow-hidden  w-full h-56 cursor-pointer lg:col-span-2 md:col-span-2 col-span-3">
-              <img
-                src="/home-hero-1.jpg"
-                className="w-full h-full object-cover transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-110"
-              />
-
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-black/30 transition-opacity duration-700 group-hover:opacity-0"></div>
-
-              <div className="absolute bottom-6 left-6 text-white transition-all duration-700 group-hover:opacity-0 group-hover:translate-y-4">
-                <h2 className="text-2xl font-light leading-tight">
-                  <span className="text-xs font-semibold text-[#FFC800]">
-                    {" "}
-                    Home
-                  </span>{" "}
-                  <br /> Design
-                </h2>
-              </div>
-            </div>
-          </div>
-        </div>
         {/* our projects */}
         <div className=" lg:px-16 md:px-12 px-4">
           <div className="flex flex-col items-center gap-4 my-4">
             <p className="text-black/60 font-medium">FEATURED WORKS</p>
-            <h2 className="lg:text-5xl md:text-5xl text-2xl text-[#FFC800] font-black text-nowrap">
-              <span className=" ">OUR PROJECTS</span>
+            <h2 className="lg:text-5xl md:text-5xl text-2xl text-[#FFC800] font-black text-nowrap ">
+              <span
+              // className="[-webkit-text-stroke:1px_#002f67]"
+              >
+                OUR PROJECTS
+              </span>
             </h2>
             {/* <hr className=" bg-linear-to-r from-yellow-400 to-black"/> */}
           </div>
