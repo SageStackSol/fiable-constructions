@@ -99,10 +99,12 @@
 
 
 "use client";
+export const dynamic = "force-dynamic";
 import { useSearchParams } from "next/navigation";
 import React, { useState,useEffect } from "react";
 
 function Page() {
+  
   const [form, setForm] = useState({
     name: "",
     email: "",
