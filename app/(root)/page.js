@@ -207,7 +207,7 @@ export default function Page() {
           </div>
         </div> */}
         {/* hero mobile */}
-        <div className="relative p-4 w-full overflow-hidden bg-[#002F67] lg:hidden md:hidden grid grid-cols-5 items-center justify-center">
+        {/* <div className="relative p-4 w-full overflow-hidden bg-[#002F67] lg:hidden md:hidden grid grid-cols-5 items-center justify-center">
           <div className="lg:col-span-2 md:col-span-2 col-span-5 pt-24">
             <motion.div
               initial={{
@@ -272,7 +272,7 @@ export default function Page() {
               </div>
             </motion.div>
           </div>
-        </div>
+        </div> */}
         {/* hero */}
         {/* <div className="relative lg:px-16 md:px-12 px-4 h-screen w-full overflow-hidden lg:grid md:grid hidden  grid-cols-5 items-center justify-center">
           <div className=" col-span-3">
@@ -344,7 +344,7 @@ export default function Page() {
           </div>
         </div> */}
         {/* hero mobile */}
-        <div className="relative p-4 w-full overflow-hidden lg:hidden md:hidden grid grid-cols-5 items-center justify-center">
+        {/* <div className="relative p-4 w-full overflow-hidden lg:hidden md:hidden grid grid-cols-5 items-center justify-center">
           <div className="lg:col-span-2 md:col-span-2 col-span-5 pt-24">
             <motion.div
               initial={{
@@ -409,7 +409,7 @@ export default function Page() {
               </div>
             </motion.div>
           </div>
-        </div>
+        </div> */}
         {/* hero-3 */}
         {/* <div className="relative h-screen w-full px-16 py-20 overflow-hidden bg-[url('/building.jpg')] lg:grid md:grid hidden grid-cols-5 items-center justify-center">
           <div className="col-span-3 ">
