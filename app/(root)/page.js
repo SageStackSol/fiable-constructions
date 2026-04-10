@@ -1,12 +1,141 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useScroll,useTransform} from "framer-motion";
 import ServicesSection from "../components/servicesSlider";
+import { useRef, useEffect, useState } from "react";
+import HomeHero from "../components/HomeHero";
 
-export default function Hero() {
+export default function Page() {
+ const [current, setCurrent] = useState(0);
+
+  const startX = useRef(0);
+  const endX = useRef(0);
+
+  const data = [
+    {
+      img: "/architecture.png",
+      title: "Architectural Design",
+      desc: "We create innovative and practical designs that combine functionality, aesthetics, and structural safety.",
+      points: [
+        "House plans and layout design",
+         "2D floor plans and working drawings",
+      "3D elevation designs",
+      "Interior space planning",
+      "Structural drawings",
+      "Building approval drawings",
+      ],
+    },
+    {
+      img:"/consultation.png",
+      title:  "Construction Consultation",
+      desc: "Expert advice to ensure smarter decisions and smoother construction.",
+      points: [
+         "Site analysis and feasibility study",
+      "Construction planning",
+      "Material selection guidance",
+      "Cost estimation and budgeting",
+      "Structural advice",
+      "Contractor coordination",
+      ],
+    },
+    {
+      img: "/execution.png",
+      title: "Construction Execution",
+      desc: "Seamless construction execution from foundation to completion.",
+      points: [
+        "Residential building construction",
+      "Commercial building construction",
+      "Renovation and remodeling",
+      "Turnkey project management",
+      "Quality supervision",
+      "Labor and contractor coordination",
+      ],
+    },
+  ];
+  
+// TOUCH EVENTS
+  const handleTouchStart = (e) => {
+    startX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchMove = (e) => {
+    endX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = () => {
+    const diff = startX.current - endX.current;
+
+    if (diff > 50) {
+      // swipe left
+      setCurrent((prev) => (prev + 1) % data.length);
+    } else if (diff < -50) {
+      // swipe right
+      setCurrent((prev) => (prev - 1 + data.length) % data.length);
+    }
+  };
+
   return (
     <>
       <div className="flex flex-col gap-28 ">
+
+<HomeHero />
+
+
+
+
+         {/* hero-img-ani*/}
+{/* <div ref={ref} className="h-[200vh] relative">
+ <div className="sticky top-0 lg:px-16 md:px-12 px-4 h-screen w-full overflow-hidden lg:grid md:grid hidden pt-40 grid-cols-5 gap-6 items-center justify-center">
+          <div className="relative z-10 col-span-3">
+            <motion.div
+              initial={{
+                opacity: 0,
+                y: -40,
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+              }}
+              transition={{
+                delay: 1.2,
+                duration: 0.8,
+              }}
+              className="relative z-10 "
+            >
+              <hr className="w-24 border border-[#FFC800]"></hr>
+              <h1 className="text-7xl font-black my-8">
+                <span className=" text-[#002f67]">FIABLE</span>
+                <br />
+                <span className="text-[#FFC800]">CONSTRUCTIONS</span>
+              </h1>
+
+              <p className="text-[#002f67] text-xl mr-40">
+                We build strong, reliable spaces designed to last. From planning
+                to completion, every project is delivered with precision and
+                care.{" "}
+              </p>
+              <div className="flex gap-4 mt-6">
+                <button className="bg-[#FFC800] text-[#002F67] px-12 py-4 font-bold hover:rounded-md cursor-pointer">
+                  START PROJECT
+                </button>
+                <button className=" border border-[#002f67] text-[#002f67] px-12 py-4 font-bold hover:rounded-md cursor-pointer">
+                  OUR EXPERTISE
+                </button>
+              </div>
+            </motion.div>
+          </div>
+   <motion.img
+  src="/hero-bg-ani.jpg"
+  style={{ y, scale }}
+  className="absolute top-0 left-0 w-full h-[120%] object-cover will-change-transform"
+/>
+        </div>
+</div> */}
+         
+        
+     
+
+           
         {/* hero */}
         {/* <div className="relative h-screen w-full px-16 py-20 overflow-hidden bg-[#002F67] lg:grid md:grid hidden grid-cols-5 items-center justify-center">
           <div className="col-span-3 ">
@@ -145,7 +274,7 @@ export default function Hero() {
           </div>
         </div>
         {/* hero */}
-        <div className="relative lg:px-16 md:px-12 px-4 h-screen w-full overflow-hidden lg:grid md:grid hidden  grid-cols-5 items-center justify-center">
+        {/* <div className="relative lg:px-16 md:px-12 px-4 h-screen w-full overflow-hidden lg:grid md:grid hidden  grid-cols-5 items-center justify-center">
           <div className=" col-span-3">
             <motion.div
               initial={{
@@ -200,7 +329,10 @@ export default function Hero() {
               }}
               className="relative z-10 "
             >
-              <img className="h-[76vh] relative transition duration-700 hover:scale-105" src="home-hero-2.jpg" />
+              <img
+                className="h-[76vh] relative transition duration-700 hover:scale-105"
+                src="home-hero-2.jpg"
+              />
               <div className="bg-[#002F67] w-fit shadow-xl transition hover:scale-105 px-8 py-4 text-center text-white absolute right-0 bottom-10">
                 <p>
                   <span className="text-white font-black text-5xl">8+</span>
@@ -210,7 +342,7 @@ export default function Hero() {
               </div>
             </motion.div>
           </div>
-        </div>
+        </div> */}
         {/* hero mobile */}
         <div className="relative p-4 w-full overflow-hidden lg:hidden md:hidden grid grid-cols-5 items-center justify-center">
           <div className="lg:col-span-2 md:col-span-2 col-span-5 pt-24">
@@ -278,6 +410,118 @@ export default function Hero() {
             </motion.div>
           </div>
         </div>
+        {/* hero-3 */}
+        {/* <div className="relative h-screen w-full px-16 py-20 overflow-hidden bg-[url('/building.jpg')] lg:grid md:grid hidden grid-cols-5 items-center justify-center">
+          <div className="col-span-3 ">
+            <motion.div
+              initial={{
+                opacity: 0,
+                y: -40,
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+              }}
+              transition={{
+                delay: 1.2,
+                duration: 0.8,
+              }}
+              className="relative z-10 "
+            >
+              <hr className="lg:w-24 md:w-24 w-12 border border-[#FFC800]"></hr>
+              <h1 className="lg:text-7xl md:text-7xl text-3xl font-black lg:my-8 md:my-8 my-2">
+                <span className=" text-white">FIABLE</span>
+                <br />
+                <span className="text-[#FFC800]">CONSTRUCTIONS</span>
+              </h1>
+
+              <p className="text-white/68 lg:text-xl md:text-xl lg:mr-40 md:mr-40">
+                We build strong, reliable spaces designed to last. From planning
+                to completion, every project is delivered with precision and
+                care.{" "}
+              </p>
+              <div className="lg:flex md:flex  gap-4 lg:mt-6 md:mt-6">
+                <button className="bg-[#FFC800] text-[#002F67] px-12 py-4 font-bold hover:rounded-md cursor-pointer">
+                  START PROJECT
+                </button>
+                <button className=" border border-white/52 text-white px-12 py-4 font-bold hover:rounded-md cursor-pointer">
+                  OUR EXPERTISE
+                </button>
+              </div>
+            </motion.div>
+          </div>
+          <div className="lg:col-span-2 md:col-span-2 col-span-5">
+            <motion.div
+              initial={{
+                opacity: 0,
+                y: 40,
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+              }}
+              transition={{
+                delay: 1.2,
+                duration: 0.8,
+              }}
+              className="relative z-10 "
+            >
+              <img
+                className="h-[76vh] relative transition duration-700 hover:scale-105"
+                src="home-hero-2.jpg"
+              />
+              <div className="bg-white shadow-xl transition hover:scale-105 w-fit px-8 py-4 text-center text-black/60 absolute right-0 bottom-10">
+                <p>
+                  <span className="text-[#002F67] font-black text-5xl">8+</span>
+                  <br />
+                  YEARS EXCELLENCE
+                </p>
+              </div>
+            </motion.div>
+          </div>
+        </div> */}
+
+        {/* hero-4 */}
+        {/* <div className="relative h-screen w-full px-16 py-20 overflow-hidden bg-[url('/building.jpg')] bg-cover lg:grid md:grid hidden grid-cols-5 items-center justify-center">
+          <div className="col-span-3 ">
+            <motion.div
+              initial={{
+                opacity: 0,
+                y: -40,
+              }}
+              animate={{
+                opacity: 1,
+                y: 0,
+              }}
+              transition={{
+                delay: 1.2,
+                duration: 0.8,
+              }}
+              className="relative z-10 "
+            >
+              <hr className="lg:w-24 md:w-24 w-12 border border-[#FFC800]"></hr>
+              <h1 className="lg:text-7xl md:text-7xl text-3xl font-black lg:my-8 md:my-8 my-2">
+                <span className=" text-white">FIABLE</span>
+                <br />
+                <span className="text-[#FFC800]">CONSTRUCTIONS</span>
+              </h1>
+
+              <p className="text-white/68 lg:text-xl md:text-xl lg:mr-40 md:mr-40">
+                We build strong, reliable spaces designed to last. From planning
+                to completion, every project is delivered with precision and
+                care.{" "}
+              </p>
+              <div className="lg:flex md:flex  gap-4 lg:mt-6 md:mt-6">
+                <button className="bg-[#FFC800] text-[#002F67] px-12 py-4 font-bold hover:rounded-md cursor-pointer">
+                  START PROJECT
+                </button>
+                <button className=" border border-white/52 text-white px-12 py-4 font-bold hover:rounded-md cursor-pointer">
+                  OUR EXPERTISE
+                </button>
+              </div>
+            </motion.div>
+          </div>
+        </div> */}
 
         {/* about us */}
 
@@ -346,7 +590,7 @@ export default function Hero() {
           <div className="my-12 lg:flex md:flex hidden">
             <ServicesSection />
           </div>
-          <div className="bg-white p-4 rounded lg:hidden md:hidden">
+          {/* <div className="bg-white p-4 rounded lg:hidden md:hidden">
             <img src="/architecture.png" />
 
             <h4 className="text-[#002F67] text-sm font-semibold my-2">
@@ -432,8 +676,65 @@ export default function Hero() {
               We focus on timely delivery, quality workmanship, and cost
               efficiency.
             </p>
-          </div>
+          </div> */}
+            <div className="lg:hidden md:hidden w-full">
+{/* DOTS */}
+      <div className="flex justify-center gap-2 my-2">
+        {data.map((_, i) => (
+          <div
+            key={i}
+            onClick={() => setCurrent(i)}
+            className="w-3 h-3 rounded-full cursor-pointer"
+            style={{
+              backgroundColor:
+                current === i ? "#ffc800" : "#002f67",
+            }}
+          />
+        ))}
+      </div>
+      {/* CARDS */}
+      <div
+        className="overflow-hidden"
+        onTouchStart={handleTouchStart}
+        onTouchMove={handleTouchMove}
+        onTouchEnd={handleTouchEnd}
+      >
+        <div
+          className="flex transition-transform duration-300"
+          style={{ transform: `translateX(-${current * 100}%)` }}
+        >
+          {data.map((item, index) => (
+            <div key={index} className="w-full flex-shrink-0">
+              <div className="bg-white p-4 rounded shadow">
+                <img src={item.img} />
+
+                <h4 className="text-[#002F67] text-md font-bold my-2">
+                  {item.title}
+                </h4>
+
+                <h2 className="font-extralight ml-2 my-2">
+                  {item.desc}
+                </h2>
+
+                <p className="font-semibold text-sm">
+                  Our execution services include:
+                </p>
+
+                <ul className="list-disc ml-5">
+                  {item.points.map((p, i) => (
+                    <li key={i}>{p}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          ))}
         </div>
+      </div>
+
+      
+    </div>
+        </div>
+
         {/* our projects */}
 
         {/* our projects */}

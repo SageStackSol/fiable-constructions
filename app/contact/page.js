@@ -305,7 +305,7 @@ function ContactForm() {
 
       <div className="grid lg:grid-cols-2 gap-6 mt-8">
 
-        <div className='bg-[url("/contact-image.jpg")] bg-center bg-cover rounded-md'></div>
+        <div className='bg-[url("/home-hero-2.jpg")] bg-center bg-cover rounded-md'></div>
 
         <form
           onSubmit={handleSubmit}
@@ -343,7 +343,7 @@ function ContactForm() {
           </div>
 
           <div>
-            <p>Message</p>
+            <p>Requirement</p>
             <textarea
               name="message"
               value={form.message}
@@ -356,7 +356,7 @@ function ContactForm() {
             type="submit"
             className="bg-[#ffc800] text-[#002f67] hover:cursor-pointer font-semibold tracking-wider shadow-lg py-3 px-6 hover:rounded-md transition"
           >
-            Send Message
+            Send a request
           </button>
         </form>
       </div>

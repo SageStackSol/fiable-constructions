@@ -4,8 +4,8 @@ const ContactSchema = new mongoose.Schema(
   {
     name: String,
     email: String,
-    phone: String,
-    message: String,
+    phone: String, // ✅ added
+
     service: {
       type: String,
       enum: [
@@ -13,6 +13,14 @@ const ContactSchema = new mongoose.Schema(
         "Construction Consultation",
         "Construction Execution",
       ],
+    },
+
+    message: String,
+
+    status: {
+      type: String,
+      enum: ["new", "approached", "success", "rejected"],
+      default: "new",
     },
   },
   { timestamps: true }
