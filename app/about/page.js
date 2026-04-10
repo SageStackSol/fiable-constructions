@@ -1,9 +1,15 @@
-import React from "react";
+"use client"
+import React,{useState} from "react";
 
 function Page() {
+   const [hover, setHover] = useState(false);
+   const [hover4, setHover4] = useState(false);
+
   return (
     <>
-      <div className="bg-[url('/fiable-about-us-bg-2.png')] bg-center bg-cover grid grid-cols-2 h-screen w-screen items-center lg:px-16 md:px-16 p-4 lg:py-20 md:py-20 bg-[#002f67]/40 bg-blend-overlay">
+    
+      {/* hero-2 */}
+      <div className="bg-[url('/about-hero-bg2.png')] bg-center bg-cover grid grid-cols-2 h-screen w-screen items-center lg:px-16 md:px-16 p-4 lg:py-20 md:py-20 bg-[#002f67]/40 bg-blend-overlay">
         <div>
           <h4 className="text-[#ffc800] font-bold lg:text-xl md:text-xl text-sm">
             LEGACY IN CONCRETE AND STEEL
@@ -64,7 +70,7 @@ function Page() {
           </p>
         </div>
       </div>
-    
+
       <div className="lg:px-16 md:px-16 p-4 lg:py-20 md:py-20  grid grid-cols-2 gap-6 bg-[#f7f7f7]">
         <div className="bg-[#002f67] lg:p-20 md:p-20 p-4 lg:col-span-1 md:col-span-1 col-span-2 ">
           <p className="text-[#ffc800] font-bold">FUTURE FORWARD</p>
@@ -129,64 +135,143 @@ function Page() {
         </h2>
         <div className="grid grid-cols-4  mt-8">
           <div className="relative overflow-hidden bg-white group lg:col-span-1 md:col-span-1 col-span-4 flex flex-col gap-4 border-r border-[#9e9e9e] py-8">
-              <div className="absolute inset-0 pointer-events-none">
-    <div
-      className="
+            {/* Animated Background */}
+            <div className="absolute inset-0 pointer-events-none">
+              <div
+                className="
         absolute inset-0 
-        bg-gradient-to-r from-transparent via-[#ffc800]/60 to-transparent 
-        opacity-70 blur-sm skew-x-[-20deg]
+        bg-[#ffc800]
         transform -translate-x-full
-        transition-all duration-700 ease-in-out
-
-        group-hover:translate-x-0
-      "
-    />
-  </div>
-              <div className="absolute inset-0 pointer-events-none">
-    <div
-      className="
-        absolute inset-0 
-        bg-gradient-to-r from-transparent via-[#ffc800]/60 to-transparent 
-        opacity-70 blur-sm skew-x-[-20deg]
-
-        transform translate-x-[-100%]
         transition-transform duration-700 ease-in-out
 
         group-hover:translate-x-0
-        group-[&:not(:hover)]:translate-x-[100%]
       "
-    />
-  </div>
-  <div className="z-10 h-full flex flex-col gap-4 py-8 w-full px-3">
-                   <h4 className="font-black text-3xl text-[#9e9e9e]">01</h4>
-            <img src="/consultation-icon.png" className="w-8 h-8 " />
-            <h5 className="text-xl font-extrabold">CONSULTATION</h5>
-            <p className="text-black/80">
-              Understanding client requirements, project scope, budget, and
-              overall vision to establish a clear direction.
-            </p>
-</div>
+              />
+            </div>
+
+            {/* Content */}
+            <div className="relative z-10 h-full flex flex-col gap-4 py-8 w-full px-3">
+              <h4 className="font-black text-3xl text-[#9e9e9e] group-hover:text-black">
+                01
+              </h4>
+              <img src="/consultation-icon.png" className="w-8 h-8" />
+              <h5 className="text-xl font-extrabold">CONSULTATION</h5>
+              <p className="text-black/80">
+                Understanding client requirements, project scope, budget, and
+                overall vision to establish a clear direction.
+              </p>
+            </div>
+          </div>
+           <div  onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)} className="relative overflow-hidden bg-white group lg:col-span-1 md:col-span-1 col-span-4 flex flex-col gap-4 border-r border-[#9e9e9e] py-8">
+            {/* Animated Background */}
+            <div className="absolute inset-0 pointer-events-none">
+              <div
+                className="
+        absolute inset-0 
+        bg-[#002f67]
+        transform -translate-x-full
+        transition-transform duration-700 ease-in-out
+
+        group-hover:translate-x-0
+      "
+              />
+            </div>
+
+            {/* Content */}
+            <div className="relative z-10 h-full flex flex-col gap-4 py-8 w-full px-3">
+             <h4 className="font-black text-3xl text-[#9e9e9e]">02</h4>
+            
+              <img src= {
+            hover
+              ? "/planning-icon-yellow.png"
+              : "/planning-icon.png"
+          } className="w-8 h-8 " />
+              <h5 className="text-xl font-extrabold group-hover:text-white">Planning & Design</h5>
+              <p className="text-black/80 group-hover:text-white/68">
+                Developing architectural designs, structural plans, and detailed
+                cost estimates for efficient execution.
+              </p>
+            </div>
+          </div>
+           <div className="relative overflow-hidden bg-white group lg:col-span-1 md:col-span-1 col-span-4 flex flex-col gap-4 border-r border-[#9e9e9e] py-8">
+            {/* Animated Background */}
+            <div className="absolute inset-0 pointer-events-none">
+              <div
+                className="
+        absolute inset-0 
+        bg-[#ffc800]
+        transform -translate-x-full
+        transition-transform duration-700 ease-in-out
+
+        group-hover:translate-x-0
+      "
+              />
+            </div>
+
+            {/* Content */}
+            <div className="relative z-10 h-full flex flex-col gap-4 py-8 w-full px-3">
+             <h4 className="font-black text-3xl text-[#9e9e9e]">03</h4>
+              <img src="/execution-icon.png" className="w-8 h-8 " />
+              <h5 className="text-xl font-extrabold">
+                Preparation & Execution
+              </h5>
+              <p className="text-black/80">
+                Finalizing approvals, scheduling, and managing construction with
+                strict quality control and supervision.
+              </p>
+            </div>
+          </div>
+           <div onMouseEnter={() => setHover4(true)}
+      onMouseLeave={() => setHover4(false)} className="relative overflow-hidden bg-white group lg:col-span-1 md:col-span-1 col-span-4 flex flex-col gap-4 border-r border-[#9e9e9e] py-8">
+            {/* Animated Background */}
+            <div className="absolute inset-0 pointer-events-none">
+              <div
+                className="
+        absolute inset-0 
+        bg-[#002f67]
+        transform -translate-x-full
+        transition-transform duration-700 ease-in-out
+
+        group-hover:translate-x-0
+      "
+              />
+            </div>
+
+            {/* Content */}
+            <div className="relative z-10 h-full flex flex-col gap-4 py-8 w-full px-3">
+             <h4 className="font-black text-3xl text-[#9e9e9e]">04</h4>
+              <img src= {
+            hover4
+              ? "/planning-icon-yellow.png"
+              : "/planning-icon.png"
+          } className="w-8 h-8 " />
+              <h5 className="text-xl font-extrabold group-hover:text-white">Delivery</h5>
+              <p className="text-black/80 group-hover:text-white/68">
+                Ensuring timely completion and handing over a fully finished,
+                ready-to-use structure with quality assurance.
+              </p>
+            </div>
           </div>
           <div className="relative overflow-hidden bg-white group lg:col-span-1 md:col-span-1 col-span-4 flex flex-col gap-4 border-r border-[#9e9e9e] py-8">
-    <div className="absolute inset-0 pointer-events-none">
-    <div
-      className="
+            <div className="absolute inset-0 pointer-events-none">
+              <div
+                className="
         absolute inset-0 
-        bg-gradient-to-r from-transparent via-[#ffc800]/60 to-transparent 
-        opacity-70 blur-sm skew-x-[-20deg]
+       bg-[#ffc800]
+         blur-sm skew-x-[-20deg]
         transform -translate-x-full
         transition-all duration-700 ease-in-out
 
         group-hover:translate-x-0
       "
-    />
-  </div>
-              <div className="absolute inset-0 pointer-events-none">
-    <div
-      className="
+              />
+            </div>
+            <div className="absolute inset-0 pointer-events-none">
+              <div
+                className="
         absolute inset-0 
-        bg-gradient-to-r from-transparent via-[#ffc800]/60 to-transparent 
-        opacity-70 blur-sm skew-x-[-20deg]
+      bg-[#ffc800] blur-sm skew-x-[-20deg]
 
         transform translate-x-[-100%]
         transition-transform duration-700 ease-in-out
@@ -194,38 +279,36 @@ function Page() {
         group-hover:translate-x-0
         group-[&:not(:hover)]:translate-x-[100%]
       "
-    />
-  </div>
-  <div className="z-10 h-full flex flex-col gap-4 py-8 w-full px-3">
-           
-            <h4 className="font-black text-3xl text-[#9e9e9e]">02</h4>
-            <img src="/planning-icon.png" className="w-8 h-8 " />
-            <h5 className="text-xl font-extrabold">Planning & Design</h5>
-            <p className="text-black/80">
-              Developing architectural designs, structural plans, and detailed
-              cost estimates for efficient execution.
-            </p>
-          </div></div>
-          <div className="relative overflow-hidden bg-white group  lg:col-span-1 md:col-span-1 col-span-4 flex flex-col gap-4 border-r border-[#9e9e9e] ">
-             <div className="absolute inset-0 pointer-events-none">
-    <div
-      className="
+              />
+            </div>
+            <div className="z-10 h-full flex flex-col gap-4 py-8 w-full px-3">
+              <h4 className="font-black text-3xl text-[#9e9e9e]">01</h4>
+              <img src="/consultation-icon.png" className="w-8 h-8 " />
+              <h5 className="text-xl font-extrabold">CONSULTATION</h5>
+              <p className="text-black/80">
+                Understanding client requirements, project scope, budget, and
+                overall vision to establish a clear direction.
+              </p>
+            </div>
+          </div>
+          <div className="relative overflow-hidden bg-white group lg:col-span-1 md:col-span-1 col-span-4 flex flex-col gap-4 border-r border-[#9e9e9e] py-8">
+            <div className="absolute inset-0 pointer-events-none">
+              <div
+                className="
         absolute inset-0 
-        bg-gradient-to-r from-transparent via-[#ffc800]/60 to-transparent 
-        opacity-70 blur-sm skew-x-[-20deg]
+        bg-[#002f67] blur-sm skew-x-[-20deg]
         transform -translate-x-full
         transition-all duration-700 ease-in-out
 
         group-hover:translate-x-0
       "
-    />
-  </div>
-              <div className="absolute inset-0 pointer-events-none">
-    <div
-      className="
+              />
+            </div>
+            <div className="absolute inset-0 pointer-events-none">
+              <div
+                className="
         absolute inset-0 
-        bg-gradient-to-r from-transparent via-[#ffc800]/60 to-transparent 
-        opacity-70 blur-sm skew-x-[-20deg]
+        bg-[#002f67] blur-sm skew-x-[-20deg]
 
         transform translate-x-[-100%]
         transition-transform duration-700 ease-in-out
@@ -233,39 +316,76 @@ function Page() {
         group-hover:translate-x-0
         group-[&:not(:hover)]:translate-x-[100%]
       "
-    />
-  </div>
-  <div className="z-10 h-full flex flex-col gap-4 py-8 w-full px-3">
-<h4 className="font-black text-3xl text-[#9e9e9e]">03</h4>
-            <img src="/execution-icon.png" className="w-8 h-8 " />
-            <h5 className="text-xl font-extrabold">Preparation & Execution</h5>
-            <p className="text-black/80">
-              Finalizing approvals, scheduling, and managing construction with
-              strict quality control and supervision.
-            </p>
-  </div>
-            
+              />
+            </div>
+            <div className="z-10 h-full flex flex-col gap-4 py-8 w-full px-3">
+              <h4 className="font-black text-3xl text-[#9e9e9e]">02</h4>
+              <img src="/planning-icon.png" className="w-8 h-8 " />
+              <h5 className="text-xl font-extrabold">Planning & Design</h5>
+              <p className="text-black/80">
+                Developing architectural designs, structural plans, and detailed
+                cost estimates for efficient execution.
+              </p>
+            </div>
+          </div>
+          <div className="relative overflow-hidden bg-white group  lg:col-span-1 md:col-span-1 col-span-4 flex flex-col gap-4 border-r border-[#9e9e9e] py-8">
+            <div className="absolute inset-0 pointer-events-none">
+              <div
+                className="
+        absolute inset-0 
+        bg-[#ffc800] blur-sm skew-x-[-20deg]
+        transform -translate-x-full
+        transition-all duration-700 ease-in-out
+
+        group-hover:translate-x-0
+      "
+              />
+            </div>
+            <div className="absolute inset-0 pointer-events-none">
+              <div
+                className="
+        absolute inset-0 
+        bg-[#ffc800] 
+        blur-sm skew-x-[-20deg]
+
+        transform translate-x-[-100%]
+        transition-transform duration-700 ease-in-out
+
+        group-hover:translate-x-0
+        group-[&:not(:hover)]:translate-x-[100%]
+      "
+              />
+            </div>
+            <div className="z-10 h-full flex flex-col gap-4 py-8 w-full px-3">
+              <h4 className="font-black text-3xl text-[#9e9e9e]">03</h4>
+              <img src="/execution-icon.png" className="w-8 h-8 " />
+              <h5 className="text-xl font-extrabold">
+                Preparation & Execution
+              </h5>
+              <p className="text-black/80">
+                Finalizing approvals, scheduling, and managing construction with
+                strict quality control and supervision.
+              </p>
+            </div>
           </div>
           <div className="relative overflow-hidden bg-white group lg:col-span-1 md:col-span-1 col-span-4 flex flex-col gap-4 lg:border-0 md:border-0 border-r border-[#9e9e9e] py-8">
-   <div className="absolute inset-0 pointer-events-none">
-    <div
-      className="
+            <div className="absolute inset-0 pointer-events-none">
+              <div
+                className="
         absolute inset-0 
-        bg-gradient-to-r from-transparent via-[#ffc800]/60 to-transparent 
-        opacity-70 blur-sm skew-x-[-20deg]
+       bg-[#002f67] blur-sm skew-x-[-20deg]
         transform -translate-x-full
         transition-all duration-700 ease-in-out
 
         group-hover:translate-x-0
       "
-    />
-  </div>
-              <div className="absolute inset-0 pointer-events-none">
-    <div
-      className="
+              />
+            </div>
+            <div className="absolute inset-0 pointer-events-none">
+              <div
+                className="
         absolute inset-0 
-        bg-gradient-to-r from-transparent via-[#ffc800]/60 to-transparent 
-        opacity-70 blur-sm skew-x-[-20deg]
+       bg-[#002f67] blur-sm skew-x-[-20deg]
 
         transform translate-x-[-100%]
         transition-transform duration-700 ease-in-out
@@ -273,22 +393,22 @@ function Page() {
         group-hover:translate-x-0
         group-[&:not(:hover)]:translate-x-[100%]
       "
-    />
-  </div>
-  <div className="z-10 h-full flex flex-col gap-4 py-8 w-full px-3">     
-            <h4 className="font-black text-3xl text-[#9e9e9e]">04</h4>
-            <img src="/delivery-icon.png" className="w-8 h-8 " />
-            <h5 className="text-xl font-extrabold">Delivery</h5>
-            <p className="text-black/80">
-              Ensuring timely completion and handing over a fully finished,
-              ready-to-use structure with quality assurance.
-            </p>
-          </div></div>
+              />
+            </div>
+            <div className="z-10 h-full flex flex-col gap-4 py-8 w-full px-3">
+              <h4 className="font-black text-3xl text-[#9e9e9e]">04</h4>
+              <img src="/delivery-icon.png" className="w-8 h-8 " />
+              <h5 className="text-xl font-extrabold">Delivery</h5>
+              <p className="text-black/80">
+                Ensuring timely completion and handing over a fully finished,
+                ready-to-use structure with quality assurance.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
       <div className="lg:px-16 md:px-16 p-4 lg:py-20 md:py-20 bg-[#ffc800]">
         <h2 className="text-[#002f67] font-black lg:text-8xl md:text-8xl text-3xl text-center">
-
           LET&apos;S BUILD SOMETHING THAT LASTS
         </h2>
         <div className="flex justify-center">
