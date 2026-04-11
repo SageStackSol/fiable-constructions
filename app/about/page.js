@@ -151,7 +151,9 @@ function Page() {
 
             {/* Content */}
             <div className="relative z-10 h-full flex flex-col gap-4 py-8 w-full px-3">
-              <h4 className="font-black text-3xl text-[#9e9e9e] group-hover:text-black">
+              <h4 className="font-black text-3xl text-[#9e9e9e]
+               group-hover:text--black
+               ">
                 01
               </h4>
               <img src="/consultation-icon.png" className="w-8 h-8" />
@@ -253,7 +255,7 @@ function Page() {
               </p>
             </div>
           </div>
-          <div className="relative overflow-hidden bg-white group lg:col-span-1 md:col-span-1 col-span-4 flex flex-col gap-4 border-r border-[#9e9e9e] py-8">
+          {/* <div className="relative overflow-hidden bg-white group lg:col-span-1 md:col-span-1 col-span-4 flex flex-col gap-4 border-r border-[#9e9e9e] py-8">
             <div className="absolute inset-0 pointer-events-none">
               <div
                 className="
@@ -404,7 +406,7 @@ function Page() {
                 ready-to-use structure with quality assurance.
               </p>
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
       <div className="lg:px-16 md:px-16 p-4 lg:py-20 md:py-20 bg-[#ffc800]">
