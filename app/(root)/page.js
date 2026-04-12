@@ -4,6 +4,7 @@ import { motion, useScroll,useTransform} from "framer-motion";
 import ServicesSection from "../components/servicesSlider";
 import { useRef, useEffect, useState } from "react";
 import HomeHero from "../components/HomeHero";
+import Link from "next/link";
 
 export default function Page() {
  const [current, setCurrent] = useState(0);
@@ -889,9 +890,12 @@ export default function Page() {
             Get a Comprehensive estimate and project timeline from our expert
             engineers today.
           </p>
+          <Link href={"/contact"}>
           <button className="bg-black font-bold text-sm px-6 hover:rounded-md py-3 cursor-pointer text-[#ffc800]">
             Contact Us
           </button>
+          </Link>
+          
         </div>
       </div>
     </>
