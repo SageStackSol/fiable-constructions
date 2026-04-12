@@ -1,13 +1,13 @@
-"use client"
-import React,{useState} from "react";
+"use client";
+import React, { useState } from "react";
+import Link from "next/link";
 
 function Page() {
-   const [hover, setHover] = useState(false);
-   const [hover4, setHover4] = useState(false);
+  const [hover, setHover] = useState(false);
+  const [hover4, setHover4] = useState(false);
 
   return (
     <>
-    
       {/* hero-2 */}
       <div className="bg-[url('/about-hero-bg2.png')] bg-center bg-cover grid grid-cols-2 h-screen w-screen items-center lg:px-16 md:px-16 p-4 lg:py-20 md:py-20 bg-[#002f67]/40 bg-blend-overlay">
         <div>
@@ -151,9 +151,11 @@ function Page() {
 
             {/* Content */}
             <div className="relative z-10 h-full flex flex-col gap-4 py-8 w-full px-3">
-              <h4 className="font-black text-3xl text-[#9e9e9e]
+              <h4
+                className="font-black text-3xl text-[#9e9e9e]
                group-hover:text--black
-               ">
+               "
+              >
                 01
               </h4>
               <img src="/consultation-icon.png" className="w-8 h-8" />
@@ -164,8 +166,11 @@ function Page() {
               </p>
             </div>
           </div>
-           <div  onMouseEnter={() => setHover(true)}
-      onMouseLeave={() => setHover(false)} className="relative overflow-hidden bg-white group lg:col-span-1 md:col-span-1 col-span-4 flex flex-col gap-4 border-r border-[#9e9e9e] py-8">
+          <div
+            onMouseEnter={() => setHover(true)}
+            onMouseLeave={() => setHover(false)}
+            className="relative overflow-hidden bg-white group lg:col-span-1 md:col-span-1 col-span-4 flex flex-col gap-4 border-r border-[#9e9e9e] py-8"
+          >
             {/* Animated Background */}
             <div className="absolute inset-0 pointer-events-none">
               <div
@@ -182,21 +187,22 @@ function Page() {
 
             {/* Content */}
             <div className="relative z-10 h-full flex flex-col gap-4 py-8 w-full px-3">
-             <h4 className="font-black text-3xl text-[#9e9e9e]">02</h4>
-            
-              <img src= {
-            hover
-              ? "/planning-icon-yellow.png"
-              : "/planning-icon.png"
-          } className="w-8 h-8 " />
-              <h5 className="text-xl font-extrabold group-hover:text-white">Planning & Design</h5>
+              <h4 className="font-black text-3xl text-[#9e9e9e]">02</h4>
+
+              <img
+                src={hover ? "/planning-icon-yellow.png" : "/planning-icon.png"}
+                className="w-8 h-8 "
+              />
+              <h5 className="text-xl font-extrabold group-hover:text-white">
+                Planning & Design
+              </h5>
               <p className="text-black/80 group-hover:text-white/68">
                 Developing architectural designs, structural plans, and detailed
                 cost estimates for efficient execution.
               </p>
             </div>
           </div>
-           <div className="relative overflow-hidden bg-white group lg:col-span-1 md:col-span-1 col-span-4 flex flex-col gap-4 border-r border-[#9e9e9e] py-8">
+          <div className="relative overflow-hidden bg-white group lg:col-span-1 md:col-span-1 col-span-4 flex flex-col gap-4 border-r border-[#9e9e9e] py-8">
             {/* Animated Background */}
             <div className="absolute inset-0 pointer-events-none">
               <div
@@ -213,7 +219,7 @@ function Page() {
 
             {/* Content */}
             <div className="relative z-10 h-full flex flex-col gap-4 py-8 w-full px-3">
-             <h4 className="font-black text-3xl text-[#9e9e9e]">03</h4>
+              <h4 className="font-black text-3xl text-[#9e9e9e]">03</h4>
               <img src="/execution-icon.png" className="w-8 h-8 " />
               <h5 className="text-xl font-extrabold">
                 Preparation & Execution
@@ -224,8 +230,11 @@ function Page() {
               </p>
             </div>
           </div>
-           <div onMouseEnter={() => setHover4(true)}
-      onMouseLeave={() => setHover4(false)} className="relative overflow-hidden bg-white group lg:col-span-1 md:col-span-1 col-span-4 flex flex-col gap-4 border-r border-[#9e9e9e] py-8">
+          <div
+            onMouseEnter={() => setHover4(true)}
+            onMouseLeave={() => setHover4(false)}
+            className="relative overflow-hidden bg-white group lg:col-span-1 md:col-span-1 col-span-4 flex flex-col gap-4 border-r border-[#9e9e9e] py-8"
+          >
             {/* Animated Background */}
             <div className="absolute inset-0 pointer-events-none">
               <div
@@ -242,13 +251,16 @@ function Page() {
 
             {/* Content */}
             <div className="relative z-10 h-full flex flex-col gap-4 py-8 w-full px-3">
-             <h4 className="font-black text-3xl text-[#9e9e9e]">04</h4>
-              <img src= {
-            hover4
-              ? "/planning-icon-yellow.png"
-              : "/planning-icon.png"
-          } className="w-8 h-8 " />
-              <h5 className="text-xl font-extrabold group-hover:text-white">Delivery</h5>
+              <h4 className="font-black text-3xl text-[#9e9e9e]">04</h4>
+              <img
+                src={
+                  hover4 ? "/planning-icon-yellow.png" : "/planning-icon.png"
+                }
+                className="w-8 h-8 "
+              />
+              <h5 className="text-xl font-extrabold group-hover:text-white">
+                Delivery
+              </h5>
               <p className="text-black/80 group-hover:text-white/68">
                 Ensuring timely completion and handing over a fully finished,
                 ready-to-use structure with quality assurance.
@@ -414,9 +426,11 @@ function Page() {
           LET&apos;S BUILD SOMETHING THAT LASTS
         </h2>
         <div className="flex justify-center">
-          <button className="font-extrabold text-white hover:cursor-pointer hover:rounded-md lg:text-2xl md:text-2xl bg-[#002f67] lg:px-24 md:px-24 px-12 py-4 mt-6 ">
-            CONTACT US
-          </button>
+          <Link href={"/contact"}>
+            <button className="font-extrabold text-white hover:cursor-pointer hover:rounded-md lg:text-2xl md:text-2xl bg-[#002f67] lg:px-24 md:px-24 px-12 py-4 mt-6 ">
+              CONTACT US
+            </button>
+          </Link>
         </div>
       </div>
     </>

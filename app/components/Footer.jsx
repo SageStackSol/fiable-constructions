@@ -10,7 +10,7 @@ function Footer() {
     <>
       <div className="grid grid-cols-3 gap-6 bg-[#002f67] lg:h-72 md:h-72 lg:px-[4em] md:px-[4em] px-[1em] py-[2em] items-center text-white">
         <div className="flex flex-col justify-between lg:h-44 md:h-44  lg:col-span-1 md:col-span-1 col-span-3">
-          <h2 className="font-semibold ">Fiable Constructions</h2>
+          <h2 className="font-semibold text-xl mb-2 ">Fiable Constructions</h2>
           <p className="">
             We build strong, reliable spaces designed to last. From planning to
             completion, every project is delivered with precision and care.
