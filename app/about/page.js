@@ -21,23 +21,11 @@ function Page() {
         </div>
       </div>
       <div className="py-20 lg:px-16 md:px-16 p-4 lg:py-20 md:py-20 grid grid-cols-3 gap-12">
-        {/* <div class=" flex items-center justify-center p-10">
-  <div class="relative inline-block">
-    <div class="absolute inset-0 translate-x-4 translate-y-4 border-r-[10px] border-b-[10px] border-yellow-400"></div>
-    <div class="relative bg-white">
-      <img 
-        src="/home-hero-1.jpg" 
-        class="w-[600px] h-auto block"
-      />
-    </div>
-
-  </div>
-
-</div> */}
+  
         <div class="lg:col-span-1 md:col-span-1 col-span-3 flex h-full items-center justify-center ">
           <div class="relative h-full inline-block">
             <div class="absolute top-2 left-2 w-full h-full bg-yellow-400 z-0"></div>
-            <img src="/home-hero-1.jpg" class="relative z-10 block  h-full" />
+            <img src="/Satish_ProfilePic.jpeg" class="relative z-10 block border border-[#002f67] h-full" />
           </div>
         </div>
         <div className="lg:col-span-2 md:col-span-2 col-span-3 ">
@@ -64,7 +52,7 @@ function Page() {
             lasting value and client trust.
             <br />
             <br />
-            <b className="text-2xl text-[#002f67]">FOUNDERS NAME</b>
+            <b className="text-2xl text-[#002f67]">KOTAGIRI SATISH KUMAR</b>
             <br />
             <span className="font-semibold">FOUNDER</span>
           </p>

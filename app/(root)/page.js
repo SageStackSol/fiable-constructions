@@ -52,6 +52,30 @@ export default function Page() {
       "Labor and contractor coordination",
       ],
     },
+      {
+  title: "Interior Designing",
+  desc: "Transforming spaces with functional and aesthetically pleasing interiors.",
+  img: "/interior.jpg",
+  points: [
+    "Residential interior design",
+    "Commercial interior design",
+    "Space planning and layout",
+    "Furniture and fixture selection",
+    "Lighting design and implementation",
+    "Material and finish selection",
+  ]},
+    {
+  title: "Landscaping",
+  desc: "Enhancing outdoor spaces with creative and sustainable landscape solutions.",
+  img:  "/landscaping.jpg",
+  points: [
+    "Garden design and development",
+    "Lawn installation and maintenance",
+    "Hardscape construction",
+    "Irrigation system installation",
+    "Outdoor lighting setup",
+    "Plant selection and plantation",
+  ]},
   ];
   
 // TOUCH EVENTS
