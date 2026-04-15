@@ -97,14 +97,13 @@
 
 // export default Page;
 
-
 // "use client";
 // export const dynamic = "force-dynamic";
 // import { useSearchParams } from "next/navigation";
 // import React, { useState,useEffect } from "react";
 
 // function Page() {
-  
+
 //   const [form, setForm] = useState({
 //     name: "",
 //     email: "",
@@ -304,7 +303,6 @@ function ContactForm() {
       </p>
 
       <div className="grid lg:grid-cols-2 gap-6 mt-8">
-
         <div className='bg-[url("/home-hero-2.jpg")] bg-center bg-cover rounded-md'></div>
 
         <form
@@ -313,17 +311,35 @@ function ContactForm() {
         >
           <div>
             <p>Name</p>
-            <input required name="name" value={form.name} onChange={handleChange} className={sharedInputClass} />
+            <input
+              required
+              name="name"
+              value={form.name}
+              onChange={handleChange}
+              className={sharedInputClass}
+            />
           </div>
 
           <div>
             <p>Email</p>
-            <input required name="email" value={form.email} onChange={handleChange} className={sharedInputClass} />
+            <input
+              required
+              name="email"
+              value={form.email}
+              onChange={handleChange}
+              className={sharedInputClass}
+            />
           </div>
 
           <div>
             <p>Phone Number</p>
-            <input required name="phone" value={form.phone} onChange={handleChange} className={sharedInputClass} />
+            <input
+              required
+              name="phone"
+              value={form.phone}
+              onChange={handleChange}
+              className={sharedInputClass}
+            />
           </div>
 
           <div>
@@ -337,8 +353,14 @@ function ContactForm() {
             >
               <option value="">Select a service</option>
               <option value="Architectural Design">Architectural Design</option>
-              <option value="Construction Consultation">Construction Consultation</option>
-              <option value="Construction Execution">Construction Execution</option>
+              <option value="Construction Consultation">
+                Construction Consultation
+              </option>
+              <option value="Construction Execution">
+                Construction Execution
+              </option>
+              <option value="Interior Designing">Interior Designing</option>
+              <option value="Landscaping">Landscaping</option>
             </select>
           </div>
 
