@@ -10,13 +10,6 @@ export default function AdminProjects() {
   const [tab, setTab] = useState("post");
 
   // ✅ LOAD SAVED STATE ON FIRST RENDER
-  useEffect(() => {
-    const savedActive = localStorage.getItem("admin_active");
-    const savedTab = localStorage.getItem("admin_tab");
-
-    if (savedActive) setActive(savedActive);
-    if (savedTab) setTab(savedTab);
-  }, []);
 
   // ✅ SAVE WHEN CHANGED
   useEffect(() => {

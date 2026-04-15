@@ -71,8 +71,7 @@ function Footer() {
           ></iframe>
           {/* <img className="h-36 w-[80%]" src="/map.png" /> */}
           <p className="text-sm mt-2">
-            FAIRMOUNT FORTUNE ONE MALL, 401 TO 406, Sanath Nagar Main Rd, Czech
-            Colony, Sanath Nagar, Hyderabad, Telangana 500018
+            Flat no 3203&04, Janapriya Metropolis Apartment, Motinagar, Erragadda, Hyderabad 500018
           </p>
         </div>
       </div>

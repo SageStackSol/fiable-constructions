@@ -12,6 +12,8 @@ const ContactSchema = new mongoose.Schema(
         "Architectural Design",
         "Construction Consultation",
         "Construction Execution",
+        "Interior Designing",
+        "Landscaping",
       ],
     },
 
@@ -23,7 +25,7 @@ const ContactSchema = new mongoose.Schema(
       default: "new",
     },
   },
-  { timestamps: true }
+  { timestamps: true },
 );
 
 export default mongoose.models.Contact ||

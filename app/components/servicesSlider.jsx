@@ -50,6 +50,36 @@ const services = [
     ],
     text: "We focus on timely delivery, quality workmanship, and cost efficiency.",
   },
+  {
+  title: "Interior Designing",
+  heading: "Transforming spaces with functional and aesthetically pleasing interiors.",
+  image: "/interior.jpg",
+  listTitle: "Our execution services include:",
+  list: [
+    "Residential interior design",
+    "Commercial interior design",
+    "Space planning and layout",
+    "Furniture and fixture selection",
+    "Lighting design and implementation",
+    "Material and finish selection",
+  ],
+  text: "We blend creativity with functionality to create elegant and comfortable living and working spaces.",
+},
+{
+  title: "Landscaping",
+  heading: "Enhancing outdoor spaces with creative and sustainable landscape solutions.",
+  image: "/landscaping.jpg",
+  listTitle: "Our execution services include:",
+  list: [
+    "Garden design and development",
+    "Lawn installation and maintenance",
+    "Hardscape construction",
+    "Irrigation system installation",
+    "Outdoor lighting setup",
+    "Plant selection and plantation",
+  ],
+  text: "We create visually appealing and eco-friendly outdoor environments that elevate the overall property value.",
+}
 ];
 
 export default function ServicesSection() {
