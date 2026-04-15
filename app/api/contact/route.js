@@ -69,7 +69,7 @@ export async function POST(req) {
     });
 
     // ✅ 2. Send mail AFTER save (non-blocking)
-    sendMail(body);
+    await sendMail(body);
 
     return Response.json(contact, { status: 201 });
 
