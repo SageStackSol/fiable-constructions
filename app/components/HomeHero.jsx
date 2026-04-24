@@ -466,11 +466,11 @@ export default function HomeHero() {
               className="border lg:w-24 md:w-24 w-12"
             />
             <motion.h1
-              style={{ color: blueColor }}
+              style={{ color: yellowColor }}
               className="lg:text-7xl md:text-7xl text-3xl font-black lg:my-8 md:my-8 my-4 leading-tight"
             >
               FIABLE <br />
-              <motion.span style={{ color: yellowColor }}>CONSTRUCTIONS</motion.span>
+              <motion.span style={{ color: blueColor }}>CONSTRUCTIONS</motion.span>
             </motion.h1>
 
             <motion.p
