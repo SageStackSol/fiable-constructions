@@ -71,7 +71,7 @@ function Navbar() {
         />
 
         <div
-          className={`fixed top-0 right-0 h-screen w-[95vw] flex flex-col justify-between bg-white shadow-lg transform transition-transform duration-300 ${
+          className={`fixed top-0 right-0 h-[90vh] w-[95vw] flex flex-col justify-between bg-white shadow-lg transform transition-transform duration-300 ${
             menuOpen ? "translate-x-0" : "translate-x-full"
           }`}
         >
@@ -86,7 +86,7 @@ function Navbar() {
             <ul className=" gap-20 text-right text-xl font-light ">
               <Link onClick={handleClose} href={"/"}>
                 <li
-                  className={`${pathname === "/" ? "bg-[#ffc800]" : ""} px-4 cursor-pointer relative after:absolute after:left-0 after:bottom-[-4px] after:h-[2px] after:w-full after:bg-[#FFC800] after:origin-left after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100`}
+                  className={`${pathname === "/" ? "bg-[#ffc800]" : ""} text-wrap px-4 cursor-pointer relative after:absolute after:left-0 after:bottom-[-4px] after:h-[2px] after:w-full after:bg-[#FFC800] after:origin-left after:scale-x-0 after:transition-transform after:duration-300 hover:after:scale-x-100`}
                 >
                   Home
                 </li>
@@ -115,12 +115,12 @@ function Navbar() {
           </div>
 
           <div className="flex flex-col justify-between lg:h-44 md:h-44 p-4 lg:col-span-1 md:col-span-1 col-span-3">
-            <h2 className="font-black ">Fiable Constructions</h2>
-            <p className="">
+            <h2 className="font-black text-xl">Fiable Constructions</h2>
+            <p className="font-light">
               We build strong, reliable spaces designed to last. From planning
               to completion, every project is delivered with precision and care.
             </p>
-            <div className="my-2">
+            <div className="my-2 font-light">
               <p>Mobile Number: 9000789297</p>
               <p>Email: fiableconstructions@gmail.com</p>
             </div>
