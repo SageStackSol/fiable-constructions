@@ -3,23 +3,39 @@ import mongoose from "mongoose";
 const ProjectSchema = new mongoose.Schema(
   {
     title: { type: String, required: true },
-    description: { type: String, required: true },
 
-    image: String,
-    imagePublicId: String,
+    overview: String,
 
-    gallery: [String],
-    galleryPublicIds: [String],
+    yearCompleted: String,
 
-    video: String,
-    videoPublicId: String,
+    clientName: String,
+    clientLocation: String,
+    clientIndustry: String,
 
-    clientLogo: String,
-    clientLogoPublicId: String,
+    scopeOfWork: String,
+    size: String,
 
-    pinned: { type: Boolean, default: false },
+    pinned: {
+      type: Boolean,
+      default: false,
+    },
+
+    mainImage: {
+      type: String, // 🌄 Cloudinary URL
+      required: true,
+    },
+
+    images: [
+      {
+        type: String, // multiple image URLs
+      },
+    ],
+
+    video: {
+      type: String, // Cloudinary video URL
+    },
   },
-  { timestamps: true },
+  { timestamps: true }
 );
 
 export default mongoose.models.Project ||
