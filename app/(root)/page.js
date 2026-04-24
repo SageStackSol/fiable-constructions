@@ -1,28 +1,28 @@
 "use client";
 
-import { motion, useScroll,useTransform} from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import ServicesSection from "../components/servicesSlider";
 import { useRef, useEffect, useState } from "react";
 import HomeHero from "../components/HomeHero";
 import Link from "next/link";
 
 export default function Page() {
- const [current, setCurrent] = useState(0);
- const [projects,setProjects]= useState([])
+  const [current, setCurrent] = useState(0);
+  const [projects, setProjects] = useState([]);
 
   const startX = useRef(0);
   const endX = useRef(0);
 
-const fetchProjects = async () => {
-  const res = await fetch("/api/projects?pinned=true");
-  const data = await res.json();
-  setProjects(data);
-};
+  const fetchProjects = async () => {
+    const res = await fetch("/api/projects?pinned=true");
+    const data = await res.json();
+    setProjects(data);
+  };
 
-useEffect(()=>{
-  fetchProjects()
-},[])
-console.log(projects)
+  useEffect(() => {
+    fetchProjects();
+  }, []);
+  console.log(projects);
   const data = [
     {
       img: "/architecture.png",
@@ -30,24 +30,24 @@ console.log(projects)
       desc: "We create innovative and practical designs that combine functionality, aesthetics, and structural safety.",
       points: [
         "House plans and layout design",
-         "2D floor plans and working drawings",
-      "3D elevation designs",
-      "Interior space planning",
-      "Structural drawings",
-      "Building approval drawings",
+        "2D floor plans and working drawings",
+        "3D elevation designs",
+        "Interior space planning",
+        "Structural drawings",
+        "Building approval drawings",
       ],
     },
     {
-      img:"/consultation.png",
-      title:  "Construction Consultation",
+      img: "/consultation.png",
+      title: "Construction Consultation",
       desc: "Expert advice to ensure smarter decisions and smoother construction.",
       points: [
-         "Site analysis and feasibility study",
-      "Construction planning",
-      "Material selection guidance",
-      "Cost estimation and budgeting",
-      "Structural advice",
-      "Contractor coordination",
+        "Site analysis and feasibility study",
+        "Construction planning",
+        "Material selection guidance",
+        "Cost estimation and budgeting",
+        "Structural advice",
+        "Contractor coordination",
       ],
     },
     {
@@ -56,40 +56,42 @@ console.log(projects)
       desc: "Seamless construction execution from foundation to completion.",
       points: [
         "Residential building construction",
-      "Commercial building construction",
-      "Renovation and remodeling",
-      "Turnkey project management",
-      "Quality supervision",
-      "Labor and contractor coordination",
+        "Commercial building construction",
+        "Renovation and remodeling",
+        "Turnkey project management",
+        "Quality supervision",
+        "Labor and contractor coordination",
       ],
     },
-      {
-  title: "Interior Designing",
-  desc: "Transforming spaces with functional and aesthetically pleasing interiors.",
-  img: "/interior.jpg",
-  points: [
-    "Residential interior design",
-    "Commercial interior design",
-    "Space planning and layout",
-    "Furniture and fixture selection",
-    "Lighting design and implementation",
-    "Material and finish selection",
-  ]},
     {
-  title: "Landscaping",
-  desc: "Enhancing outdoor spaces with creative and sustainable landscape solutions.",
-  img:  "/landscaping.jpg",
-  points: [
-    "Garden design and development",
-    "Lawn installation and maintenance",
-    "Hardscape construction",
-    "Irrigation system installation",
-    "Outdoor lighting setup",
-    "Plant selection and plantation",
-  ]},
+      title: "Interior Designing",
+      desc: "Transforming spaces with functional and aesthetically pleasing interiors.",
+      img: "/interior.jpg",
+      points: [
+        "Residential interior design",
+        "Commercial interior design",
+        "Space planning and layout",
+        "Furniture and fixture selection",
+        "Lighting design and implementation",
+        "Material and finish selection",
+      ],
+    },
+    {
+      title: "Landscaping",
+      desc: "Enhancing outdoor spaces with creative and sustainable landscape solutions.",
+      img: "/landscaping.jpg",
+      points: [
+        "Garden design and development",
+        "Lawn installation and maintenance",
+        "Hardscape construction",
+        "Irrigation system installation",
+        "Outdoor lighting setup",
+        "Plant selection and plantation",
+      ],
+    },
   ];
-  
-// TOUCH EVENTS
+
+  // TOUCH EVENTS
   const handleTouchStart = (e) => {
     startX.current = e.touches[0].clientX;
   };
@@ -113,8 +115,7 @@ console.log(projects)
   return (
     <>
       <div className="flex flex-col gap-28 ">
-
-<HomeHero />
+        <HomeHero />
         {/* about us */}
 
         <div className=" lg:px-16 md:px-12 px-4">
@@ -161,7 +162,7 @@ console.log(projects)
                 90+ Trusted Partnerships
               </button>
               <button className="mt-2 bg-[#FFC800] text-black mr-2 px-6 py-2 rounded-md ">
-                350 +Designs & Plans Executed
+                350+ Designs & Plans Executed
               </button>
               <button className="mt-2 bg-[#FFC800] text-black mr-2 px-6 py-2 rounded-md ">
                 8+ Years of Structural Excellence
@@ -182,63 +183,58 @@ console.log(projects)
           <div className="my-12 lg:flex md:flex hidden">
             <ServicesSection />
           </div>
-         
-            <div className="lg:hidden md:hidden w-full">
-{/* DOTS */}
-      <div className="flex justify-center gap-2 my-2">
-        {data.map((_, i) => (
-          <div
-            key={i}
-            onClick={() => setCurrent(i)}
-            className="w-3 h-3 rounded-full cursor-pointer"
-            style={{
-              backgroundColor:
-                current === i ? "#ffc800" : "#002f67",
-            }}
-          />
-        ))}
-      </div>
-      {/* CARDS */}
-      <div
-        className="overflow-hidden"
-        onTouchStart={handleTouchStart}
-        onTouchMove={handleTouchMove}
-        onTouchEnd={handleTouchEnd}
-      >
-        <div
-          className="flex transition-transform duration-300"
-          style={{ transform: `translateX(-${current * 100}%)` }}
-        >
-          {data.map((item, index) => (
-            <div key={index} className="w-full flex-shrink-0">
-              <div className="bg-white p-4 rounded shadow">
-                <img src={item.img} />
 
-                <h4 className="text-[#002F67] text-md font-bold my-2">
-                  {item.title}
-                </h4>
+          <div className="lg:hidden md:hidden w-full">
+            {/* DOTS */}
+            <div className="flex justify-center gap-2 my-2">
+              {data.map((_, i) => (
+                <div
+                  key={i}
+                  onClick={() => setCurrent(i)}
+                  className="w-3 h-3 rounded-full cursor-pointer"
+                  style={{
+                    backgroundColor: current === i ? "#ffc800" : "#002f67",
+                  }}
+                />
+              ))}
+            </div>
+            {/* CARDS */}
+            <div
+              className="overflow-hidden"
+              onTouchStart={handleTouchStart}
+              onTouchMove={handleTouchMove}
+              onTouchEnd={handleTouchEnd}
+            >
+              <div
+                className="flex transition-transform duration-300"
+                style={{ transform: `translateX(-${current * 100}%)` }}
+              >
+                {data.map((item, index) => (
+                  <div key={index} className="w-full flex-shrink-0">
+                    <div className="bg-white p-4 rounded shadow">
+                      <img src={item.img} />
 
-                <h2 className="font-extralight ml-2 my-2">
-                  {item.desc}
-                </h2>
+                      <h4 className="text-[#002F67] text-md font-bold my-2">
+                        {item.title}
+                      </h4>
 
-                <p className="font-semibold text-sm">
-                  Our execution services include:
-                </p>
+                      <h2 className="font-extralight ml-2 my-2">{item.desc}</h2>
 
-                <ul className="list-disc ml-5">
-                  {item.points.map((p, i) => (
-                    <li key={i}>{p}</li>
-                  ))}
-                </ul>
+                      <p className="font-semibold text-sm">
+                        Our execution services include:
+                      </p>
+
+                      <ul className="list-disc ml-5">
+                        {item.points.map((p, i) => (
+                          <li key={i}>{p}</li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
-          ))}
-        </div>
-      </div>
-
-      
-    </div>
+          </div>
         </div>
 
         {/* our projects */}
@@ -256,36 +252,41 @@ console.log(projects)
             </h2>
             {/* <hr className=" bg-linear-to-r from-yellow-400 to-black"/> */}
           </div>
-<div className="my-12 grid grid-cols-4 gap-2">
-        {projects.length === 0 ? (
-          <p className="col-span-4">NO PROJECTS</p>
-        ) : (
-          projects.map((i) => {
-            return (
-              <Link className=" lg:col-span-1 md:col-span-1 col-span-4" href={`/projects/${i._id}`} key={i._id}>
-              <div className="group relative overflow-hidden  w-full  h-56 cursor-pointer">
-                <img
-                  src={i.mainImage}
-                  className="w-full h-full object-cover transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-110"
-                />
+          <div className="my-12 grid grid-cols-4 gap-2">
+            {projects.length === 0 ? (
+              <p className="col-span-4">NO PROJECTS</p>
+            ) : (
+              projects.map((i) => {
+                return (
+                  <Link
+                    className=" lg:col-span-1 md:col-span-1 col-span-4"
+                    href={`/projects/${i._id}`}
+                    key={i._id}
+                  >
+                    <div className="group relative overflow-hidden  w-full  h-56 cursor-pointer">
+                      <img
+                        src={i.mainImage}
+                        className="w-full h-full object-cover transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] group-hover:scale-110"
+                      />
 
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-black/30 transition-opacity duration-700 group-hover:opacity-0"></div>
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-black/30 transition-opacity duration-700 group-hover:opacity-0"></div>
 
-                <div className="absolute bottom-6 left-6 text-white transition-all duration-700 group-hover:opacity-0 group-hover:translate-y-4">
-                  <h2 className="text-2xl font-light leading-tight">
-                    <span className="text-xs font-semibold text-[#FFC800]">
-                      {i.title}
-                      {console.log(i.title)}
-                    </span>
-                    <br /> {i.overview}
-                  </h2>
-                </div>
-              </div></Link>
-            );
-          })
-        )}
-      </div>
-{/* 
+                      <div className="absolute bottom-6 left-6 text-white transition-all duration-700 group-hover:opacity-0 group-hover:translate-y-4">
+                        <h2 className="text-2xl font-light leading-tight">
+                          <span className="text-xs font-semibold text-[#FFC800]">
+                            {i.title}
+                            {console.log(i.title)}
+                          </span>
+                          <br /> {i.overview}
+                        </h2>
+                      </div>
+                    </div>
+                  </Link>
+                );
+              })
+            )}
+          </div>
+          {/* 
           <div className="my-12 grid grid-cols-3 gap-2">
             <div className="group relative overflow-hidden  w-full h-56 cursor-pointer lg:col-span-2 md:col-span-2 col-span-3">
               <img
@@ -360,7 +361,6 @@ console.log(projects)
               </div>
             </div>
           </div> */}
-
         </div>
 
         <div className=" lg:px-16 md:px-12 px-4 py-12 bg-[#F7F7F7]">
@@ -381,35 +381,37 @@ console.log(projects)
             <div className="lg:col-span-1 md:col-span-1 col-span-2 flex flex-col gap-8">
               <div className="border-l-4 border-[#FFC800] lg:h-44 md:h-44  px-4 py-2 shadow-gray-300 shadow-xl flex flex-col justify-between">
                 <p>
-                  &ldquo; Fiable Constructions transformed our vision into
-                  reality. Their attention to safety and timeline management was
-                  refreshing in this industry. Truly professional &ldquo;
+                  &ldquo;Fiable Constructions handled our duplex project with
+                  great professionalism and attention to detail. The entire 340
+                  Sq.yds development was executed smoothly from start to finish.
+                  &ldquo;
                 </p>
                 <div className="flex gap-4">
                   <div className="bg-[#002F68] w-11 h-11 flex justify-center items-center">
-                    <h2 className="text-white font-semibold m-0">G</h2>
+                    <h2 className="text-white font-semibold m-0">C</h2>
                   </div>
                   <p>
-                    <span className="font-bold">-Gajala </span>
+                    <span className="font-bold">-Chaitanya Sagar </span>
                     <br />
-                    CEO, Sonic Solutions
+                    Homeowner
                   </p>
                 </div>
               </div>{" "}
               <div className="border-l-4 border-[#002F67] lg:h-44 md:h-44  px-4 py-2 shadow-gray-300 shadow-xl flex flex-col justify-between">
                 <p>
-                  &ldquo; Fiable Constructions transformed our vision into
-                  reality. Their attention to safety and timeline management was
-                  refreshing in this industry. Truly professional &ldquo;
+                  &ldquo; Fiable Constructions executed our 3-storied
+                  independent house project with precision and professionalism.
+                  The entire 260 Sq.yds development was completed smoothly with
+                  great attention to detail. &ldquo;
                 </p>
                 <div className="flex gap-4">
                   <div className="bg-[#ffc800] w-11 h-11 flex justify-center items-center">
                     <h2 className="text-white font-semibold m-0">G</h2>
                   </div>
                   <p>
-                    <span className="font-bold">-Gajala </span>
+                    <span className="font-bold">-Gopi Krishna Phani </span>
                     <br />
-                    CEO, Sonic Solutions
+                    Homeowner
                   </p>
                 </div>
               </div>
@@ -426,11 +428,10 @@ console.log(projects)
             engineers today.
           </p>
           <Link href={"/contact"}>
-          <button className="bg-black font-bold text-sm px-6 hover:rounded-md py-3 cursor-pointer text-[#ffc800]">
-            Contact Us
-          </button>
+            <button className="bg-black font-bold text-sm px-6 hover:rounded-md py-3 cursor-pointer text-[#ffc800]">
+              Contact Us
+            </button>
           </Link>
-          
         </div>
       </div>
     </>

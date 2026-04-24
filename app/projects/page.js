@@ -33,12 +33,12 @@ function Page() {
         </p>
       </div>
 
-      <div className="flex my-12 gap-2">
+      {/* <div className="flex my-12 gap-2">
         <p className=" text-black/68 font-medium">Filter projects:</p>
         <select className="text-[#002f67] font-semibold">
           <option>Services</option>
         </select>
-      </div>
+      </div> */}
 
       <div className="grid grid-cols-4 gap-2">
         {projects.length === 0 ? (

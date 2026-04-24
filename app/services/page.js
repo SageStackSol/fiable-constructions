@@ -20,15 +20,15 @@ function Page() {
         <hr className="border border-[#ffc800] w-[10%] " />
       </div>
       <div className="grid grid-cols-3 py-20 lg:px-16 md:px-16 p-8 lg:py-20 md:py-20  bg-[#f7f7f7] ">
-        <div className="relative h-[72vh] lg:col-span-1 md:col-span-1 col-span-3  flex">
+        <div className="relative lg:h-[72vh] md:h-[72vh] h-[52vh] lg:col-span-1 md:col-span-1 col-span-3  flex">
           {/* Shadow/offset border */}
-          <div className="absolute -top-4 -left-4 w-[29vw] h-full border-4 border-yellow-400 z-0"></div>
+          <div className="absolute -top-4 -left-4 lg:w-[29vw] md:w-[29vw] w-[78vw] h-full border-4 border-yellow-400 z-0"></div>
 
           {/* Image */}
           <img
             src="/architect-service.jpg"
             alt="design"
-            className="relative z-10 h-[72vh] shadow-2xl"
+            className="relative z-10 lg:h-[72vh] md:h-[72vh] h-[52vh] shadow-2xl"
           />
         </div>
         <div className="text-[#002f67] lg:col-span-2 md:col-span-2 col-span-3 lg:px-12 md:px-12 flex flex-col justify-center">
@@ -45,7 +45,7 @@ function Page() {
             needs.
           </p>
           <div className="grid grid-cols-2 gap-4 my-6">
-            <div className="lg:col-span-1 md:col-span-1 col-span-2 lg:col-span-1 md:col-span-1 col-span-2 flex gap-2 items-center">
+            <div className="lg:col-span-1 md:col-span-1 col-span-2 flex gap-2 items-center">
               {" "}
               <img className="w-8 h-8" src="/geometric-design.png" />
               <p>House plans and layout design</p>
@@ -98,7 +98,7 @@ function Page() {
             quality standards, safety regulations and budget limits.
           </p>
           <div className="flex flex-col gap-4 my-4">
-            <div className="border-l-4 border-[#FFC800] flex gap-4 px-6 py-6 shadow-gray-300 shadow-md ">
+            <div className="border-l-4 border-[#FFC800] lg:flex md:flex gap-4 px-6 py-6 shadow-gray-300 shadow-md ">
               <img className="w-12 h-12" src="/evaluation.png" />
 
               <p>
@@ -108,7 +108,7 @@ function Page() {
                 guidance tailored to industrial specs.
               </p>
             </div>
-            <div className="border-l-4 border-[#FFC800] flex gap-4 px-6 py-6 shadow-gray-300 shadow-md ">
+            <div className="border-l-4 border-[#FFC800] lg:flex md:flex gap-4 px-6 py-6 shadow-gray-300 shadow-md ">
               <img className="w-12 h-12" src="/budget-planning.png" />
 
               <p>
@@ -127,15 +127,15 @@ function Page() {
           </button>
         </div>
 
-        <div className="relative h-[72vh] lg:col-span-1 md:col-span-1 col-span-3 flex">
+        <div className="relative lg:h-[72vh] md:h-[72vh] h-[52vh] lg:col-span-1 md:col-span-1 col-span-3 flex lg:mt-0 md:mt-0 mt-4">
           {/* Shadow/offset border */}
-          <div className="absolute top-6 left-6 w-[29vw] h-full border-4 border-[#002f67] z-0"></div>
+          <div className="absolute top-6 left-6 lg:w-[29vw] md:w-[29vw] w-[78vw] h-full border-4 border-[#002f67] z-0"></div>
 
           {/* Image */}
           <img
             src="/consultation-service.jpg"
             alt="design"
-            className="relative z-10 h-[72vh] shadow-2xl"
+            className="relative z-10 lg:h-[72vh] md:h-[72vh] h-[52vh] shadow-2xl"
           />
         </div>
       </div>
@@ -167,7 +167,7 @@ hover:shadow-2xl"
                 Full-scale building construction for homes and corporate spaces
                 with turnkey management.
               </p>
-              <ul className="list-disc text-[#002c67]/68 font-medium">
+              <ul className="list-disc ml-2 text-[#002c67]/68 font-medium">
                 <li>NEW BUILDS</li>
                 <li>RENOVATIONS</li>
                 <li>REMODELING</li>
@@ -184,7 +184,7 @@ hover:shadow-2xl "
                 Regorous quality control and on-site supervision to ensure
                 structural integrity and safety.
               </p>
-              <ul className="list-disc text-[#002c67]/68 font-medium">
+              <ul className="list-disc ml-2 text-[#002c67]/68 font-medium">
                 <li>LABOUR COORDINATION</li>
                 <li>SAFETY COMPLIANCE</li>
                 <li>QUALITY AUDITS</li>
@@ -201,7 +201,7 @@ hover:shadow-2xl"
                 End-to-end oversight ensuring cost efficiency and adhering to
                 strict project timelines.{" "}
               </p>
-              <ul className="list-disc text-[#002c67]/68 font-medium">
+              <ul className="list-disc ml-2 text-[#002c67]/68 font-medium">
                 <li>TIMELY DELIVERY</li>
                 <li>BUDGET CONTROL</li>
                 <li>TURNKEY EXECUTION</li>
@@ -228,7 +228,7 @@ hover:shadow-2xl"
             personalized environments that reflect your vision.
           </p>
           <div className="flex flex-col gap-4 my-4">
-            <ul className="list-disc marker:text-[#ffc800] font-semibold">
+            <ul className="list-disc ml-2 marker:text-[#ffc800] font-semibold">
               <li>RESIDENTIAL INTERIOR DESIGN</li>
               <li>COMMERCIAL INTERIOR DESIGN</li>
               <li>SPACE PLANNING AND LAYOUT</li>
@@ -245,29 +245,29 @@ hover:shadow-2xl"
           </button>
         </div>
 
-        <div className="relative h-[72vh] lg:col-span-1 md:col-span-1 col-span-3 flex">
+        <div className="relative lg:h-[72vh] md:h-[72vh] h-[52vh] lg:col-span-1 md:col-span-1 col-span-3 flex lg:mt-0 md:mt-0 mt-4">
           {/* Shadow/offset border */}
-          <div className="absolute top-6 left-6 w-[29vw] h-full border-4 border-[#002f67] z-0"></div>
+          <div className="absolute top-6 left-6 lg:w-[29vw] md:w-[29vw] w-[84vw]  h-full border-4 border-[#002f67] z-0"></div>
 
           {/* Image */}
           <img
             src="/interior-service.jpg"
             alt="design"
-            className="relative z-10 h-[72vh] shadow-2xl w-[98%] grayscale"
+            className="relative z-10 lg:h-[72vh] md:h-[72vh] h-[52vh] shadow-2xl w-[98%] grayscale"
           />
         </div>
       </div>
 
       <div className="grid grid-cols-3 py-20 lg:px-16 md:px-16 p-8 lg:py-20 md:py-20  bg-[#f7f7f7] ">
-        <div className="relative h-[72vh] lg:col-span-1 md:col-span-1 col-span-3  flex">
+        <div className="relative lg:h-[72vh] md:h-[72vh] h-[52vh] lg:col-span-1 md:col-span-1 col-span-3  flex">
           {/* Shadow/offset border */}
-          <div className="absolute -top-4 -left-4 w-[29vw] h-full border-4 border-yellow-400 z-0"></div>
+          <div className="absolute -top-4 -left-4 lg:w-[29vw] md:w-[29vw] w-[78vw] h-full border-4 border-yellow-400 z-0"></div>
 
           {/* Image */}
           <img
             src="/landscaping-service.jpg"
             alt="design"
-            className="relative z-10 h-[72vh] w-full grayscale shadow-2xl"
+            className="relative z-10 lg:h-[72vh] md:h-[72vh] h-[52vh] w-full grayscale shadow-2xl"
           />
         </div>
         <div className="text-[#002f67] lg:col-span-2 md:col-span-2 col-span-3 lg:px-12 md:px-12 flex flex-col justify-center">
