@@ -5,7 +5,7 @@ const ProjectSchema = new mongoose.Schema(
     title: { type: String, required: true },
 
     overview: String,
-
+ description:{type: String},
     yearCompleted: String,
 
     clientName: String,
