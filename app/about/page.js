@@ -5,12 +5,22 @@ import Link from "next/link";
 function Page() {
   const [hover, setHover] = useState(false);
   const [hover4, setHover4] = useState(false);
+  const scrollToSection = (id) => {
+  const element = document.getElementById(id);
+  if (element) {
+    element.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  }
+};
 
   return (
     <>
       {/* hero-2 */}
-      <div className="bg-[url('/about-hero-bg2.png')] bg-center bg-cover grid grid-cols-2 h-screen w-screen items-center lg:px-16 md:px-16 p-4 lg:py-20 md:py-20 bg-[#002f67]/40 bg-blend-overlay">
-        <div>
+      <div className="bg-[url('/about-hero-bg2.png')] bg-center bg-cover flex flex-col h-screen w-screen lg:px-16 md:px-16 p-4 lg:pt-20 md:pt-20 bg-[#002f67]/40 bg-blend-overlay">
+        <div className=" lg:mt-[12vh] md:mt-[12vh] mt-[30vh] flex flex-col justify-between h-[80vh]">
+  <div className="w-[50vw]">
           <h4 className="text-[#ffc800] font-bold lg:text-xl md:text-xl text-sm">
             LEGACY IN CONCRETE AND STEEL
           </h4>
@@ -19,8 +29,16 @@ function Page() {
           </h1>
           <hr className="border border-[#ffc800] w-[50%]" />
         </div>
+        <div onClick={() => scrollToSection("scrollBelow")} className="flex justify-center cursor-pointer">
+      <p className="text-white font-semibold text-center text-sm">Scroll Down</p>
+        <img className="w-4" src="/arrow.png"/>
+        </div>
+  
+        </div>
+      
+       
       </div>
-      <div className="py-20 lg:px-16 md:px-16 p-4 lg:py-20 md:py-20 grid grid-cols-3 gap-12">
+      <div id="scrollBelow" className="py-20 lg:px-16 md:px-16 p-4 lg:py-20 md:py-20 grid grid-cols-3 gap-12">
   
         <div class="lg:col-span-1 md:col-span-1 col-span-3 flex h-full items-center justify-center ">
           <div class="relative h-full inline-block">

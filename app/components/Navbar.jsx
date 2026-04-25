@@ -71,7 +71,7 @@ function Navbar() {
         />
 
         <div
-          className={`fixed top-0 right-0 h-[90vh] w-[95vw] flex flex-col justify-between bg-white shadow-lg transform transition-transform duration-300 ${
+          className={`fixed top-0 right-0 h-[95vh] w-[95vw] flex flex-col justify-between bg-white shadow-lg transform transition-transform duration-300 ${
             menuOpen ? "translate-x-0" : "translate-x-full"
           }`}
         >

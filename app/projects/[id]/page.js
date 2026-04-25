@@ -12,7 +12,15 @@ export default function Page() {
   const images = project?.images || [];
   const [current, setCurrent] = useState(0);
   const [offset, setOffset] = useState(0);
-
+  const scrollToSection = (id) => {
+  const element = document.getElementById(id);
+  if (element) {
+    element.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+  }
+};
 useEffect(() => {
   const handleScroll = () => {
     setOffset(window.scrollY);
@@ -101,7 +109,7 @@ useEffect(() => {
       >
         <div
           onClick={() => setOpen(true)}
-          className={`relative lg:h-52 md:h-52 h-40 transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] cursor-pointer
+          className={`relative lg:h-52 md:h-52 h-40 transition-all duration-700 ease-[cubic-bezier(0.25,1,0.5,1)] cursor-pointer shadow
       ${open ? "lg:w-[60vw] md:w-[60vw] w-full bg-white rounded-l-2xl rounded-br-2xl" : "lg:w-40 md:w-40 w-20 bg-gray-200 rounded-2xl "}
       `}
         >
@@ -120,8 +128,9 @@ useEffect(() => {
 
           {/* SMALL STATE (DOTS) */}
           {!open && (
-            <div className="flex h-full items-center justify-center group">
-              <div className="grid grid-cols-2 gap-3">
+            <div className="flex flex-col justify-between h-full items-center  group">
+             <p className="pt-4"> Click Here</p>
+              <div className="grid grid-cols-2 gap-3 pb-20">
                 {[...Array(6)].map((_, i) => (
                   <span
                     key={i}
@@ -149,16 +158,16 @@ useEffect(() => {
                   onClick={() => {
                     setDesOpen(!desOpen);
                   }}
-                  className="flex-1 flex items-center px-6  border-b border-gray-300 gap-2 hover:gap-6 transform duration-500"
+                  className="flex-1 hover:text-[#002f67] text-gray-400 flex items-center px-6  border-b border-gray-300 gap-2 hover:gap-6 transform duration-500"
                 >
-                  <p className="hover:text-[#002f67] font-medium text-gray-400 tracking-widest text-sm">
+                  <p className=" font-medium  tracking-widest text-sm">
                     PROJECT SPECS
                   </p>
                   {/* <span className="text-[#ffc800] text-xl">→</span> */}
                   <img src="/right.png" className="w-6 " />
                 </div>
 
-                <div className="flex-1 flex items-center text-gray-400  px-6 lg:py-0 md:py-0 py-2 hover:text-[#002f67] font-medium text-sm">
+                <div onClick={() => scrollToSection("scrollBelow")}  className="flex-1 flex items-center text-gray-400  px-6 lg:py-0 md:py-0 py-2 hover:text-[#002f67] font-medium text-sm">
                   Discover the story
                 </div>
               </div>
@@ -247,6 +256,7 @@ useEffect(() => {
       </div>
 
       <div className="relative w-full  overflow-hidden rounded-2xl my-24">
+       <h2 id="scrollBelow" className="text-center pt-20 mb-8 text-xl font-extralight text-[#002f67]"> {project.description}</h2> 
         <div className="px-6 pb-6 flex justify-between items-center">
           <h2 className="font-light lg:text-5xl md:text-5xl text-3xl text-[#002f67]">GALLERY</h2>
           <div className="flex gap-2">
